@@ -37,13 +37,13 @@ for k=1:numel(song)
         t = n/8000; % time in seconds
 
         %Attack - The time it takes for the note to reach the maximum level
-        A = logspace(0, 0.9, (length(note(w, n))*0.20)); 
+        A = linspace(0, 0.9, (length(note(w, n))*0.20)); 
         %Decay - The time it takes for the note to go from the maximum level to sustain level
-        D = logspace(0.9, 0.9,(length(note(w, n))*0.0)); 
+        D = linspace(0.9, 0.9,(length(note(w, n))*0.0)); 
         %Sustain - The level while the note is held
-        S = logspace(0.9, 0.9,(length(note(w, n))*0.70)); 
+        S = linspace(0.9, 0.9,(length(note(w, n))*0.70)); 
         %Release - The time it takes for the note to fall from the sustain level to zero when released
-        R = logspace(0.9, 0,(length(note(w, n))*0.1)); 
+        R = linspace(0.9, 0,(length(note(w, n))*0.1)); 
         values = [A D S R];
 
         a = zeros(size(note(w, n)));
